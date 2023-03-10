@@ -1,0 +1,18 @@
+.todoList_container{
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    margin: 20px;
+    padding: 30px;
+    width: 40%;
+   
+}
+
+.disableInput{
+    width: 10rem;
+}
+
+.flex_Container{
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+    
+}
