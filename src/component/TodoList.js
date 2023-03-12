@@ -1,3 +1,4 @@
+import { isDisabled } from "@testing-library/user-event/dist/utils"
 import { useState } from "react"
 import "./todoList.css"
 const TodoList=()=>{
@@ -28,13 +29,19 @@ const TodoList=()=>{
                 <div class="p-2 flex-fill">
                     <label for="disabledTextInput" class="form-label">Grade :</label>
                     <fieldset disabled>
-                       <input type="disabled" id="disabledTextInput" class="form-control disableInput" placeholder={counter} />
+                       <input type="disabled" id="disabledTextInput" class="form-control disableInput hh" placeholder={counter} />
                     </fieldset>
                 </div>
                 <div class="p-2 align-self-end ">
                     
-                    <button type="button" class="btn btn-danger" onClick={inc}>Inc</button>
-                    <button type="button" class="btn btn-danger ml-3 mr-3" onClick={dec}>Dec</button>
+                    {counter === 6 ? <button type="button" class="btn btn-secondary " disabled={isDisabled} >Inc</button>
+                                    :<button type="button" class="btn btn-danger " onClick={inc}>Inc</button>
+                    }
+
+                    {counter === 1 ?<button type="button" class="btn btn-secondary ml-3 mr-3" disabled={isDisabled} >Dec</button>                    
+                                    :<button type="button" class="btn btn-danger ml-3 mr-3" onClick={dec}>dec</button>
+                    }
+                    
                 </div>
             </div>
             
