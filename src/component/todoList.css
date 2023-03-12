@@ -17,6 +17,32 @@
     
 }
 
-.hh{
+.redColor{
+    border: 1px solid #f1f1f1;
+    border-radius: 5px;
     background-color: red;
+    padding: 7px;
+    color: white;
+}
+
+.yellowColor{
+    border: 1px solid #f1f1f1;
+    border-radius: 5px;
+    background-color: yellow;
+    padding: 7px;
+}
+
+.orangColor{
+    border: 1px solid #f1f1f1;
+    border-radius: 5px;
+    background-color: orange;
+    padding: 7px;
+}
+
+.greenColor{
+    border: 1px solid #f1f1f1;
+    border-radius: 5px;
+    background-color: green;
+    padding: 7px;
+    color: white;
 }
