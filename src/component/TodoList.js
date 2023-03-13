@@ -3,26 +3,32 @@ import { useState } from "react"
 import "./todoList.css"
 const TodoList=({todo,setTodo})=>{
 
-    const [grade,setgrade]=useState(1)
     const [fullname,setFullname]=useState("")
-
-   
+    const [grade,setgrade]=useState(1)
+    const [subject,setSubject]=useState("")
 
     function handleSubmit(event) {
         event.preventDefault();
         // Hier können Sie Ihre Submit-Logik implementieren
       }
 
+
+    const handleChangeSelect=(event)=>{
+        setSubject(event.target.value)
+    }
+
     const handleClick=()=>{
        
         const copy=[...todo]
         copy.push({
             fullname:fullname,
-            grade:grade
+            grade:grade,
+            subject:subject
         })
         setTodo(copy)
         console.log(copy);
         setFullname("")
+        setSubject("Please Select your Subject")
 
 
     }
@@ -43,7 +49,7 @@ const TodoList=({todo,setTodo})=>{
        
         <form className="todoList_container" onSubmit={handleSubmit}>
             <div class="mb-3">
-                <label for="formGroupExampleInput" class="form-label">Full Name :</label>
+                
                 <input type="text" 
                        class="form-control" 
                        id="formGroupExampleInput" 
@@ -53,6 +59,20 @@ const TodoList=({todo,setTodo})=>{
                        
                        />
             </div>
+
+            <select class="form-control mb-3" aria-label="Default select example" onChange={handleChangeSelect}>
+                <option selected>Please Select your Subject</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="Science">Science (Biology, Chemistry, Physics)</option>
+                <option value="Language Arts">Language Arts (English, Grammar, Writing)</option>
+                <option value="Social Studies">Social Studies (History, Geography, Civics)</option>
+                <option value="Foreign Languages">Foreign Languages (Spanish, French, German, etc.)</option>
+                <option value="Physical Education">Physical Education (PE)</option>
+                <option value="Fine Arts">Fine Arts (Art, Music)</option>
+                <option value="Computer Science/Technology">Computer Science/Technology</option>
+                <option value="Health Education">Health Education</option>
+                <option value="Career and Technical Education">Career and Technical Education (CTE)</option>
+            </select>
             
             <div class="d-flex mb-3 flex_Container">
                 <div class="p-2 flex-fill">
@@ -96,6 +116,8 @@ const TodoList=({todo,setTodo})=>{
                     
                 </div>
             </div>
+
+           
             
             <button type="submit" 
                     class="btn btn-primary"
