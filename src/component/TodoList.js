@@ -16,9 +16,15 @@ const TodoList=({todo,setTodo})=>{
     const handleClick=()=>{
        
         const copy=[...todo]
-        copy.push(fullname)
+        copy.push({
+            fullname:fullname,
+            grade:grade
+        })
         setTodo(copy)
+        console.log(copy);
         setFullname("")
+
+
     }
 
     function inc(){

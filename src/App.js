@@ -5,9 +5,7 @@ import ViewList from './component/ViewList';
 
 function App() {
 
-  const [todo,setTodo]=useState([
-    "todo1","todo2"
-  ])
+  const [todo,setTodo]=useState([])
   return (
     <div className="main_container">
      <TodoList todo={todo} setTodo={setTodo}/>
