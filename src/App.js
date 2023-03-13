@@ -1,13 +1,18 @@
+import { useState } from 'react';
 import './App.css';
 import TodoList from './component/TodoList';
 import ViewList from './component/ViewList';
 
 function App() {
+
+  const [todo,setTodo]=useState([
+    "todo1","todo2"
+  ])
   return (
     <div className="main_container">
-     <TodoList />
+     <TodoList todo={todo} setTodo={setTodo}/>
      <span className="line"></span>
-     <ViewList />
+     <ViewList todo={todo} />
     </div>
   );
 }

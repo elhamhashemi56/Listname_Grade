@@ -1,8 +1,14 @@
 
-const ViewList=()=>{
+
+const ViewList=({todo})=>{
+
+    // useEffect((event)=>{
+    //     event.preventDefault()
+    // },[])
+
     return(
         <div>
-            ffffff
+            {todo.map(item=><p>{item}</p>)}
         </div>
     )
 }
